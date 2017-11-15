@@ -72,15 +72,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\dorba\Documents\Visual Studio 2017\Projects\GameJam\GameJam\SDL2-2.0.6\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\dorba\Documents\Visual Studio 2017\Projects\GameJam\GameJam\SDL2-2.0.6\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\dorba\Documents\Visual Studio 2017\Projects\GameJam\GameJam\SDL2-2.0.6\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\dorba\Documents\Visual Studio 2017\Projects\GameJam\GameJam\SDL2-2.0.6\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Users\dorba\Documents\Visual Studio 2017\Projects\GameJam\GameJam\SDL2-2.0.6\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\dorba\Documents\Visual Studio 2017\Projects\GameJam\GameJam\SDL2-2.0.6\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Users\dorba\Documents\Visual Studio 2017\Projects\GameJam\GameJam\SDL2-2.0.6\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\dorba\Documents\Visual Studio 2017\Projects\GameJam\GameJam\SDL2-2.0.6\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -136,24 +144,35 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SLD2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Controller.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="Observable.h" />
+    <ClInclude Include="Observer.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="View.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Controller.cpp" />
     <ClCompile Include="GameJam.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="Observable.cpp" />
+    <ClCompile Include="Observer.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="View.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
